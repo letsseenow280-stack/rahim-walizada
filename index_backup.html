@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rahim Walizada | English Academy</title>
+<style>
+:root{--navy:#071a2c;--blue:#155078;--gold:#e7bd70;--paper:#fffaf0}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Arial,sans-serif;color:#14283b;background:radial-gradient(circle at 50% 25%,#24577d,#071525 72%);min-height:100vh}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 5%;color:white;background:#061525eF;letter-spacing:.04em}
+.brand{font-size:clamp(18px,4vw,27px);font-weight:850}.brand span{color:#80c8f0}
+.tag{border:1px solid #6386a1;border-radius:30px;padding:8px 14px;color:#d6e9f7}
+main{max-width:1000px;margin:auto;padding:26px 16px 40px;text-align:center}
+h1{color:#e5f3ff;font-size:clamp(28px,6vw,44px);margin:12px 0 5px}.sub{color:#bdd4e6;margin:0 0 26px}
+.book-area{perspective:1800px;display:flex;justify-content:center;align-items:center;min-height:470px;padding:12px}
+.book{position:relative;width:min(92vw,690px);height:min(112vw,440px);max-height:440px;min-height:330px;transform-style:preserve-3d;filter:drop-shadow(0 22px 28px #0008)}
+.cover{position:absolute;inset:0;width:100%;height:100%;z-index:20;transform-origin:right center;transform-style:preserve-3d;transition:transform 1s cubic-bezier(.2,.7,.15,1);cursor:pointer;border-radius:12px;background:linear-gradient(100deg,#29120c 0%,#60321d 12%,#8b5630 48%,#4b2416 100%);box-shadow:inset 9px 0 13px #d49b5a55,inset -7px 0 12px #16080599,7px 10px 22px #000a,0 0 0 3px #32170f;display:flex;align-items:center;justify-content:center;color:#f4d99a;text-align:center;backface-visibility:hidden;border:2px solid #4a2415}
+.cover:before{content:'';position:absolute;inset:12px;border:2px solid #c18b4e;border-radius:8px;box-shadow:inset 0 0 0 3px #5a2b17,0 0 0 1px #2b120b}
+.cover-inner{position:relative;padding:24px 12px;text-shadow:0 2px 3px #1b0b05}
+.cover-small{font-size:12px;letter-spacing:3px;color:#e9c78a;margin-bottom:24px}
+.cover-title{font-family:Georgia,serif;font-size:clamp(27px,6vw,42px);font-weight:900;line-height:1.5;border-top:1px solid #c18b4e;border-bottom:1px solid #c18b4e;padding:14px 5px}
+.cover-author{font-size:15px;margin-top:24px;color:#f3d9a5;letter-spacing:1px}
+.cover.open{transform:rotateY(180deg);pointer-events:none;box-shadow:inset 9px 0 13px #d49b5a55,-5px 8px 16px #0007}
+.cover-hint{font-size:12px;color:#f5dfb7;margin-top:20px}
+.leaf{position:absolute;top:0;left:50%;width:50%;height:100%;transform-origin:left center;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.2,.7,.15,1);border-radius:0 12px 12px 0}
+.leaf.flipped{transform:rotateY(-180deg)}
+.face{position:absolute;inset:0;background:var(--paper);padding:10px;backface-visibility:hidden;overflow:hidden;text-align:left;border:1px solid #e6dcc8}
+.front{border-radius:0 12px 12px 0}.back{transform:rotateY(180deg);border-radius:12px 0 0 12px}
+.left-page{position:absolute;top:0;left:0;width:50%;height:100%;background:var(--paper);border-radius:12px 0 0 12px;padding:10px;text-align:left;box-shadow:inset -8px 0 14px #0000000c;overflow:hidden}
+.page-no{color:#82909b;font-size:10px;text-align:right}.lesson{color:#145078;font-size:clamp(17px,3vw,22px);font-weight:800;margin:3px 0 7px;line-height:1.12}
+.word{font-size:clamp(17px,3vw,21px);font-weight:800;color:#102e47;margin:0;padding-right:66px;line-height:1.15}.pron{color:#47708b;font-size:11px;margin:1px 0}.meaning{font-size:clamp(12px,2vw,14px);color:#475969;margin:0;line-height:1.2}
+.speak{border:0;border-radius:30px;background:#155078;color:white;padding:5px 7px;font-size:10px;cursor:pointer}
+.entry{position:relative;border-bottom:1px solid #e6dfd2;padding:4px 0 5px;margin:0 0 3px;min-height:66px}.entry .speak{position:absolute;right:0;top:4px}.left-title{font-size:clamp(15px,2.5vw,19px);color:#155078;font-weight:800;margin:7px 0}
+.controls{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:12px 0}.controls button{border:0;border-radius:12px;padding:13px 20px;background:#f7f9fb;color:#102a40;font-weight:750;font-size:15px;cursor:pointer}.controls button:disabled{opacity:.4;cursor:not-allowed}
+.counter{color:#d0e2f0;margin:10px}.hint{color:#a9c6da;font-size:13px}
+.watermark{position:fixed;bottom:10px;right:12px;color:#ffffff12;font-size:clamp(18px,4vw,36px);font-weight:900;pointer-events:none;z-index:-1}
+@media(max-width:520px){.book-area{min-height:390px}.book{height:350px;min-height:350px}.face,.left-page{padding:12px}.tag{font-size:12px}.controls button{padding:11px 15px}}
+</style></head>
+<body>
+<header><div class="brand">RAHIM <span>WALIZADA</span></div><div class="tag">English Academy</div></header>
+<main>
+<h1>Rahim Walizada</h1><p class="sub">English Learning · Vocabulary · Pronunciation</p>
+<div class="book-area"><div class="book" id="book">
+<div class="left-page" id="leftPage"><div class="page-no">Page 1</div><div class="lesson">Welcome</div><p style="font-size:clamp(16px,3vw,21px);line-height:1.5">Learn useful English words with pronunciation and Dari meanings.</p><p class="left-title">Turn the pages</p><p>Use the buttons or swipe left and right to turn this 3D book.</p></div>
+<div class="cover" id="cover" role="button" aria-label="Open book"><div class="cover-inner"><div class="cover-small">RAHIM WALIZADA</div><div class="cover-title" dir="rtl">کتاب لغات</div><div class="cover-author">ENGLISH VOCABULARY</div><div class="cover-hint">برای باز کردن کتاب لمس کنید</div></div></div>
+</div></div>
+<div class="controls"><button id="prev">◀ Previous</button><button id="next">Turn Page ▶</button><button id="read">🔊 Read Page</button></div>
+<div class="counter" id="counter">Book · 10 pages · 5 sheets</div><div class="hint">On a phone: swipe across the book to turn a page</div>
+</main><div class="watermark">Rahim Walizada</div>
+<script>
+const lessons=[
+{title:"Greetings",items:[["Hello","heh-LOH","سلام"],["Good morning","good MOR-ning","صبح بخیر"],["Welcome","WEL-kum","خوش آمدید"]]},
+{title:"Everyday words",items:[["Friend","frend","دوست"],["Family","FAM-uh-lee","خانواده"],["Water","WAW-ter","آب"]]},
+{title:"At school",items:[["Book","book","کتاب"],["Teacher","TEE-cher","معلم"],["Student","STOO-dent","شاگرد"]]},
+{title:"Useful verbs",items:[["Learn","lern","یاد گرفتن"],["Speak","speek","صحبت کردن"],["Listen","LIS-en","گوش دادن"]]},
+{title:"Daily life",items:[["Beautiful","BYOO-tuh-ful","زیبا"],["Important","im-POR-tent","مهم"],["Success","suk-SES","موفقیت"]]},
+{title:"Practice",items:[["Practice","PRAK-tis","تمرین"],["Improve","im-PROOV","بهتر ساختن"],["Remember","ri-MEM-ber","به یاد آوردن"]]},
+{title:"At work",items:[["Effort","EF-ert","تلاش"],["Progress","PRAH-gress","پیشرفت"],["Goal","gohl","هدف"]]},
+{title:"Travel",items:[["Airport","AIR-port","میدان هوایی"],["Journey","JER-nee","سفر"],["Ticket","TIK-it","تکت"]]},
+{title:"Feelings",items:[["Happy","HAP-ee","خوشحال"],["Careful","KAIR-ful","محتاط"],["Tired","TY-erd","خسته"]]},
+{title:"Keep going",items:[["Believe","bi-LEEV","باور داشتن"],["Courage","KUR-ij","شجاعت"],["Achieve","uh-CHEEV","به دست آوردن"]]}
+];
+const book=document.getElementById('book'),left=document.getElementById('leftPage');
+function pageHTML(n){let l=lessons[n];if(!l)return `<div class="page-no">End</div><div class="lesson">The End</div><p>Keep learning with Rahim Walizada.</p>`;return `<div class="page-no">Page ${n+1} of 10</div><div class="lesson">Lesson ${n+1}<div style="font-size:12px;color:#8795a0;font-weight:500"> ${l.title}</div></div>${l.items.map(x=>`<div class="entry"><div class="word">${x[0]}</div><p class="pron">/${x[1]}/</p><p class="meaning">${x[2]}</p><button class="speak" data-say="${x[0]}">🔊 Listen</button></div>`).join('')}`}
+left.innerHTML=pageHTML(0);
+for(let i=0;i<5;i++){let leaf=document.createElement('div');leaf.className='leaf';leaf.style.zIndex=5-i;leaf.dataset.sheet=i;
+leaf.innerHTML=`<div class="face front">${pageHTML(i*2+1)}</div><div class="face back">${pageHTML(i*2+2)}</div>`;book.appendChild(leaf)}
+let current=0;const leaves=[...document.querySelectorAll('.leaf')];
+const cover=document.getElementById('cover');
+function openCover(){cover.classList.add('open');}
+cover.addEventListener('click',openCover);
+function update(){
+ document.getElementById('counter').textContent=`Book · ${Math.min(10,current*2+2)} of 10 pages · ${current} of 5 sheets turned`;
+ document.getElementById('prev').disabled=current===0;
+ document.getElementById('next').disabled=current===5;
+}
+function turn(d){
+ if(d>0 && current<5){leaves[current].classList.add('flipped');current++;}
+ else if(d<0 && current>0){current--;leaves[current].classList.remove('flipped');}
+ update();
+}
+document.getElementById('next').addEventListener('click',()=>{openCover();turn(1);});
+document.getElementById('prev').addEventListener('click',()=>{openCover();turn(-1);});
+function speak(t){
+ if(!('speechSynthesis' in window)){alert('Audio is not supported. Try Chrome.');return;}
+ window.speechSynthesis.cancel();
+ const u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=0.88;
+ window.speechSynthesis.speak(u);
+}
+document.getElementById('read').addEventListener('click',()=>{openCover();
+ const idx=Math.min(current*2,9);
+ speak(lessons[idx].items.map(x=>x[0]).join('. '));
+});
+document.addEventListener('click',e=>{
+ const b=e.target.closest('[data-say]');
+ if(b){e.preventDefault();e.stopPropagation();speak(b.dataset.say);}
+});
+let sx=0;
+book.addEventListener('touchstart',e=>{sx=e.changedTouches[0].screenX;},{passive:true});
+book.addEventListener('touchend',e=>{
+ openCover();const dx=e.changedTouches[0].screenX-sx;
+ if(Math.abs(dx)>45)turn(dx<0?1:-1);
+},{passive:true});
+update();
+</script></body></html>
